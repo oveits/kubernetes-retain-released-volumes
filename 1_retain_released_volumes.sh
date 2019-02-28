@@ -1,11 +1,6 @@
 
 RELEASED_PVS=$(kubectl get pv | grep " Released " | awk '{print $1}')
 
-# install yq:
-# works, but is not needed, if we work with json files:
-#sudo yum install python2-pip jq
-#sudo pip install yq
-
 # install jq, if not already installed:
 sudo yum list installed | grep -q jq.x86_64 \
   || sudo yum install jq || exit 1
